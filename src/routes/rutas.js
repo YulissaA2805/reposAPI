@@ -3,8 +3,35 @@ const router = Router();
 //const express = require(express);
 //const router = express.Router();
 
+const juegos = require('./data.json');
+console.log(juegos);
+
 router.get('/', (req,res) => {
-    res.json({"name": "John Doe"});
+    res.json(juegos);
+});
+router.get('/:id', (req,res) => {
+    const {id} = req.params;
+    juegos.forEach(juego => {
+        if(juego.id == id){
+            res.json(juego);
+            console.log(juego.title);
+        }
+    });
+
+
+    console.log(id);
+});
+router.post('/', (req,res) => {
+    const {title, version, genre}= req.body;
+    if(title && version && genre){
+        const id = juegos.length +1;
+        const nuevojuego = {...req.body, id};
+        juegos.push(nuevojuego);
+        //console.log(nuevojuego);
+        res.status(200).json(juegos);
+    }else{
+        res.status(500).json({error:"no data"});
+    }
 });
 
 module.exports = router;

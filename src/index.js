@@ -3,15 +3,16 @@ const app = express();
 const morgan = require('morgan');
 
 //configuraciones
-app.set('port', 3000)
+app.set('port', 3000);
+app.set('json spaces',2);
 
 //middlewares
 app.use(morgan('dev'));
 app.use(express.json());
 
 //rutas
-app.use(require('./routes/rutas'));
-app.use(require('./routes/api'));
+app.use('/api/juegos',require('./routes/rutas'));
+app.use('/api', require('./routes/api'));
 
 
 //Empezando el servidor

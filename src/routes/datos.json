@@ -1,0 +1,29 @@
+[
+    {
+        "id_zapato":"1",
+        "agujetas":"poliéster",
+        "c_agujetas":"blanco",
+        "suelas":"caucho",
+        "c_suelas":"blanco",
+        "tela":"nylon",
+        "c_tela":"rojo"
+    },
+    {
+        "id_zapato":"2",
+        "agujetas":"algodón",
+        "c_agujetas":"negro",
+        "suelas":"crepe",
+        "c_suelas":"negro",
+        "tela":"nylon",
+        "c_tela":"azul"
+    },
+    {
+        "id_zapato":"3",
+        "agujetas":"yute",
+        "c_agujetas":"gris",
+        "suelas":"caucho",
+        "c_suelas":"café",
+        "tela":"lycra",
+        "c_tela":"rojo"
+    }
+]
