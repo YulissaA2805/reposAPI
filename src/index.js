@@ -11,7 +11,6 @@ app.use(morgan('dev'));
 app.use(express.json());
 
 //rutas
-app.use('/api/juegos',require('./routes/rutas'));
 app.use('/api', require('./routes/api'));
 
 

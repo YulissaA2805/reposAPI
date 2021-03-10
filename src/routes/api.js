@@ -5,12 +5,6 @@ const zapatos = require('./datos.json');
 console.log(zapatos);
 
 //Precondición: Ninguna (solo se accede en la ruta)
-//Postcondición: Regresa toda la información sobre los zapatos
-router2.get('/', (req,res) => {
-    res.json(zapatos);
-});
-
-//Precondición: Ninguna (solo se accede en la ruta)
 //Postcondición: Regresa la cantidad de agujetas que se necesitan para hacer los zapatos
 router2.get('/agujetas', (req,res) => {
     var cont_agujetas = 0;
@@ -54,6 +48,7 @@ router2.get('/suelas/:color', (req,res) => {
             cont_suelas++;
         }
     });
+    cont_suelas = cont_suelas*2;
     res.send(""+cont_suelas);
 });
 
@@ -98,5 +93,4 @@ router2.get('/zapatos/:id_zapato', (req,res) => {
     });
 });
 
-//router2.use('/api',router2);
 module.exports = router2;
